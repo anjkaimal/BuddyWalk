@@ -1,0 +1,155 @@
+<!doctype html>
+<!--
+ @license
+ Copyright 2023 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <a href="mainpage.html" style="position:absolute;top:515px;color:lightseagreen;z-index:1">Back</a>
+  <head>
+    <title>Info Windows</title>
+    <script>
+      /**
+       * @license
+       * Copyright 2023 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+      async function initMap() {
+        const contentStringAnjali = `
+          <div>
+            <img style="height:100px;border-radius:50%;display:block;margin-left:auto;margin-right:auto;" src="/images/final.jpg">
+            <h1>Me</h1>
+            <div>
+              <p style="font-family:cursive">
+                Age:  19 years old
+                <br>
+                School: UT Austin
+              </p>
+              
+            </div>
+          </div>`;
+
+          const contentStringSammy = `
+          <div>
+            <img style="height:100px;border-radius:50%;display:block;margin-left:auto;margin-right:auto;" src="/images/sammy.jpg">
+            <h1 id="nameSammy">Sammy Beck</h1>
+            <div>
+              <p style="font-family:cursive">
+                Age:  20 years old
+                <br>
+                School: UT Austin
+              </p>
+              <a href="chat.html"><button onclick="passvalues2('nameSammy')">Chat With Sammy</button></a>
+            </div>
+          </div>`;
+
+          const contentStringBen = `
+          <div>
+            <img style="height:100px;border-radius:50%;display:block;margin-left:auto;margin-right:auto;" src="/images/ben3.jpg">
+            <h1 id="nameBen">Ben Scottson</h1>
+            <div>
+              <p style="font-family:cursive">
+                Age:  18 years old
+                <br>
+                School: UT Austin
+              </p>
+              <a href="chat.html"><button onclick="passvalues2("nameBen")">Chat With Ben</button></a>
+            </div>
+          </div>`;
+
+          const contentStringMaya = `
+          <div>
+            <img style="height:100px;border-radius:50%;display:block;margin-left:auto;margin-right:auto;" src="/images/maya.jpg">
+            <h1 id="nameMaya">Maya Hallost</h1>
+            <div>
+              <p style="font-family:cursive">
+                Age:  19 years old
+                <br>
+                School: UT Austin
+              </p>
+              <a href="chat.html"><button onclick="passvalues2('nameMaya')">Chat With Maya</button></a>
+              
+            </div>
+          </div>`;
+          
+        const infoWindowAnjali = new google.maps.InfoWindow({
+          content: contentStringAnjali,
+          ariaLabel: "Anjali",
+        });
+
+        const infoWindowSammy = new google.maps.InfoWindow({
+          content: contentStringSammy,
+          ariaLabel: "Sammy",
+        });
+
+        const infoWindowBen = new google.maps.InfoWindow({
+          content: contentStringBen,
+          ariaLabel: "Ben",
+        });
+
+        const infoWindowMaya = new google.maps.InfoWindow({
+          content: contentStringMaya,
+          ariaLabel: "Maya",
+        });
+
+        const markers = document.querySelectorAll('gmp-advanced-marker');
+
+        markers[0].addEventListener('gmp-click', () => {
+          infoWindowAnjali.open({anchor: markers[0]});
+        });
+
+        markers[1].addEventListener('gmp-click', () => {
+          infoWindowSammy.open({anchor: markers[1]});
+        });
+
+        markers[2].addEventListener('gmp-click', () => {
+          infoWindowBen.open({anchor: markers[2]});
+        });
+
+        markers[3].addEventListener('gmp-click', () => {
+          infoWindowMaya.open({anchor: markers[3]});
+        });
+      }
+
+      window.initMap = initMap;
+    </script>
+    <style>
+      /**
+       * @license
+       * Copyright 2023 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      /*
+       * Optional: Makes the sample page fill the window.
+       */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <gmp-map center="30.30394, -97.75255" zoom="16" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="30.30394, -97.75255" title="Anjali" gmp-clickable></gmp-advanced-marker>
+      <gmp-advanced-marker position="30.304954, -97.754889" title="Sammy" gmp-clickable></gmp-advanced-marker>
+      <gmp-advanced-marker position="30.305852, -97.750005" title="Ben" gmp-clickable></gmp-advanced-marker>
+      <gmp-advanced-marker position="30.303496, -97.752912" title="Maya" gmp-clickable></gmp-advanced-marker>
+    </gmp-map>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHm3zc-FUYQV-i-pMCh0coUOxz3lJODTI&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_infowindows_v2"
+      defer
+    ></script>
+    <script>
+      function passvalues2(elementId) {
+            var fullname = document.getElementById(elementId).textContent;
+            localStorage.setItem("fullnamevalue", fullname);
+            return false;
+        }
+    </script>
+  </body>
+</html>

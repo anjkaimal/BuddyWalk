@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="main.css" rel="stylesheet" type = "text/css">
+</head>
+<body>
+    <div class ="container">
+        <div class="main_content">
+            <img src = "/images/tabone.jpg"  style="border-radius:10%;height:180px;position:absolute;left:20px;top:100px">
+            <img src = "/images/tabtwo.jpg"  style="border-radius:10%;height:162px;position:absolute;left:20px;top:300px">
+            <h1 style="font-family: Garamond;font-size:40px;position:absolute;left:18px">Welcome <span id="result"></span>!</h1>
+            <script>
+                document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+            </script>
+        <a href="map.html" style="position:absolute;left:50px;top:250px;color:white;font-size:10px">Click Here</a>
+        <a href="profile.html" style="position:absolute;left:50px;top:435px;color:white;font-size:10px">Click Here</a>
+        </div>
+        <div class="bottom_content">
+            <a style="left:15px" href = "profile.html"><b>Profile</b></a>
+            <a style="left:133px" href = "map.html"><b>Map</b></a>
+            <a style="left:255px" href = "chat.html"><b>Chat</b></a>
+            <img src = "/images/mapp.png" style="height:30px;border-radius:50%;position:absolute;left:133px;top:500px">
+            <img src = "/images/ch.png" style="height:30px;border-radius:50%;position:absolute;left:256px;top:500px">
+            <img src = "/images/prof.png" style="height:30px;border-radius:50%;position:absolute;left:22px;top:500px">
+    </div>
+</body>
+</html>

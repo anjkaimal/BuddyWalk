@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="chat.css" rel="stylesheet" type = "text/css">
+</head>
+<body>
+    <img style="height:60px;border-radius:50%;display:block;margin-left:auto;margin-right:auto;" src="/images/maya.jpg">
+    <h3 style="text-align:center">Maya Hallost<span id="result4"></span></h3>
+    <script>
+        document.getElementById("result4").innerHTML = localStorage.getItem("fullnamevalue");
+    </script>
+    <a href="mainpage.html" style="position:absolute;top:530px;color:lightseagreen;z-index:1">Back</a>
+    <div class="chat-messages">
+    </div>
+    <form style="position: absolute; top: 480px; left: 20px;"class="chat-input-form">
+        <input type="text" class="chat-input" required placeholder="Type here..."/>
+        <button type="submit"class ="button send-button">Send</button>
+    </form>
+    <script src="chat.js"></script>
+</body>
+</html>

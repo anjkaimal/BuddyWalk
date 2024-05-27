@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Page</title>
+    <link href="styles.css" rel="stylesheet" type = "text/css">
+</head>
+<body>
+    <h1>Welcome Back!</h1>
+    <br>
+    <h3>Name</h3>
+    <input id = "name" type = "text" name="username" />
+    <br>
+    <h3>Password</h3>
+    <input type = "password" name="password" />
+    <br>
+    <br>
+    <a href="mainpage.html"><button onclick="passvalues()"> Log in</button></a>
+    <img src = "/images/logo.jpg"  style="height:180px;border-radius:10%;position:absolute;left:95px;top:330px">
+    <script>
+        function passvalues() {
+            var firstname = document.getElementById("name").value;
+            localStorage.setItem("textvalue", firstname);
+            return false;
+        }
+    </script>
+</body>
+</html>

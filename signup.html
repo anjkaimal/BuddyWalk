@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link href="styles.css" rel="stylesheet" type = "text/css">
+</head>
+<body>
+    <h1>Welcome to BuddyWalk!</h1>
+    <h3>Name</h3>
+    <input id = "name" type = "text" name="username" />
+    <h3>Age</h3>
+    <input id ="age" type = "text" name="age" />
+    <h3>Password</h3>
+    <input type = "password" name="password" />
+    <br>
+    <br>
+    <a href="mainpage.html"><button onclick = "passvalues()"> Sign up</button></a>
+    <img src = "/images/logo.jpg"  style="border-radius:10%;height:140px;position:absolute;left:110px;top:400px">
+    <script>
+        function passvalues() {
+            var firstname = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            localStorage.setItem("textvalue", firstname);
+            localStorage.setItem("agevalue", age);
+            return false;
+        }
+    </script>
+</body>
+</html>

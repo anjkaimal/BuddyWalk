@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+    color: lightseagreen;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(36, 108, 163);
+    text-decoration: none;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: lightseagreen;
+    background: lightseagreen;
+}

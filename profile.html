@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="main.css" rel="stylesheet" type = "text/css">
+</head>
+<body>
+    <img src="/images/final.jpg">
+    <h3 style="top:260px;text-align:center;font-family:Georgia;left:125px;">Name:</h3>
+    <h3 style="top:290px;text-align:center;font-family:Georgia;left:125px;"><span id="result"></span></h3>
+            <script>
+                document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
+            </script>
+    <br>
+    <br>
+    <h3 style="top:340px;text-align:center;font-family:Georgia;left:132px">Age:</h3>
+    <h3 style="top:370px;text-align:center;font-family:Georgia; left:96px;"><span id="result2"></span> years old</h3>
+    <h3 style="top:420px;text-align:center;font-family:Georgia;left:120px;">School:</h3>
+    <h3 style="top:450px;text-align:center;font-family:Georgia;left:103px;">UT Austin</h3>
+        <script>
+            document.getElementById("result2").innerHTML=localStorage.getItem("agevalue");
+        </script>
+    <a style="left:15px" href = "profile.html"><b>Profile</b></a>
+    <a style="left:133px" href = "map.html"><b>Map</b></a>
+    <a style="left:255px" href = "login.html"><b>Chat</b></a>
+    <img src = "/images/mapp.png" style="height:30px;border-radius:50%;position:absolute;left:133px;top:500px">
+    <img src = "/images/ch.png" style="height:30px;border-radius:50%;position:absolute;left:256px;top:500px">
+    <img src = "/images/prof.png" style="height:30px;border-radius:50%;position:absolute;left:22px;top:500px">
+</html>
